@@ -1,0 +1,32 @@
+body {
+	background: #ffe;
+	color: #111;
+	padding: 3em;
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+}
+
+h1, h2 {
+	font-size: 1em;
+}
+h1:before {
+	content: "# "
+}
+
+h2:before {
+	content: "## "
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 10pt 0 0 0;
+}
+
+li:before {
+	content: "*"
+}
+
+dt:after {
+	content: ":"
+}
+
