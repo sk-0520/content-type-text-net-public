@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-SOURCE_DIR=/home/www/product
+SOURCE_DIR=/home/www/content-type-text-net-public/product
 TARGET_DIR=/usr/share/nginx/html
 
 cd $(dirname $0)
