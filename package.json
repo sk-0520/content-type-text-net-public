@@ -1,16 +1,23 @@
 {
   "name": "content-type-text-net-public",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "parcel serve './source/**/*.pug' --public-url . --dist-dir debug --open ",
+    "build": "parcel build './source/**/*.pug' --public-url . --dist-dir product"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/sk_0520/content-type-text-net-public.git"
   },
-  "author": "",
+  "author": "sk",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/sk_0520/"
+  "homepage": "https://bitbucket.org/sk_0520/",
+  "description": "",
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "parcel": "^2.0.0-nightly.424",
+    "pug": "^3.0.0",
+    "sass": "^1.27.0",
+    "typescript": "^4.0.3"
+  }
 }
