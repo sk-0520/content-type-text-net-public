@@ -1,7 +1,20 @@
 body {
 	background: #ffe;
 	color: #111;
-	padding: 3em;
+	padding: 2em 3em;
 	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	font-size: 12pt;
 }
 
+ul.inline,
+ol.inline {
+	display: inline-block;
+
+	& > li {
+		display: inline-block;
+
+		&::before {
+			content: unset;
+		}
+	}
+}

@@ -1,13 +1,13 @@
-h1,
-h2 {
-	font-size: 1em;
-}
-h1:before {
-	content: "# ";
+h1 {
+	&::before {
+		content: "# ";
+	}
 }
 
-h2:before {
-	content: "## ";
+h2 {
+	&::before {
+		content: "## ";
+	}
 }
 
 ul {
@@ -17,24 +17,15 @@ ul {
 
 	li {
 		&::before {
-			content: "*";
+			content: "* ";
 		}
 	}
 }
 
 ul.inline,
 ol.inline {
-	display: inline-block;
-
-	& > li {
-		display: inline-block;
-		
-		&::before {
-			content: unset;
-		}
+	>li {
+		margin-right: 1ex;
 	}
 }
 
-dt:after {
-	content: ":";
-}
