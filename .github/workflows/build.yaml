@@ -49,8 +49,10 @@ jobs:
       - name: <Deploy> Web
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
+          protocol: ftps
           server: content-type-text.org
           username: ${{ secrets.DEPLOY_ACCOUNT_USER }}
           password: ${{ secrets.DEPLOY_ACCOUNT_PASSWORD }}
           server-dir: ./public_html/
           local-dir: dist/
+          dry-run: true
