@@ -6,7 +6,7 @@
     "debug:watch": "parcel watch ./source/*.pug --public-url . --dist-dir debug",
     "debug": "npm-run-all --sequential debug:assets debug:watch",
     "build:front": "parcel build ./source/*.pug --public-url . --dist-dir dist --no-source-maps",
-    "build:server": "cpx ./source/.htaccess dist/",
+    "build:server": "cpx ./source/.htaccess dist/ -v",
     "build": "npm-run-all --sequential build:front build:server" ,
     "check": "ncu",
     "update": "ncu -u & npm install"
