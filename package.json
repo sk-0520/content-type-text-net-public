@@ -6,10 +6,7 @@
     "debug:assets": "cpx ./source/assets/* ./debug",
     "debug:watch": "parcel watch ./source/*.pug --public-url . --dist-dir debug",
     "debug": "npm-run-all --sequential debug:clean debug:assets debug:watch",
-    "build:clean": "rimraf ./product/",
-    "build:assets": "cpx ./source/assets/* ./product",
-    "build:build": "parcel build ./source/*.pug --public-url . --dist-dir product --no-source-maps",
-    "build": "npm-run-all --sequential build:clean build:assets build:build",
+    "build": "parcel build ./source/*.pug --public-url . --dist-dir dist --no-source-maps",
 	"check": "ncu",
 	"update": "ncu -u & npm install"
   },
