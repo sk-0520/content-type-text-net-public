@@ -5,9 +5,10 @@
     "debug:assets": "cpx ./source/assets/* ./debug",
     "debug:watch": "parcel watch ./source/*.pug --public-url . --dist-dir debug",
     "debug": "npm-run-all --sequential debug:assets debug:watch",
+    "build:assets": "cpx ./source/assets/* ./dist",
     "build:front": "parcel build ./source/*.pug --public-url . --dist-dir dist --no-source-maps",
     "build:server": "cpx ./source/.htaccess dist/",
-    "build": "npm-run-all --sequential build:front build:server" ,
+    "build": "npm-run-all --sequential build:assets build:front build:server" ,
     "check": "ncu",
     "update": "ncu -u & npm install"
   },
