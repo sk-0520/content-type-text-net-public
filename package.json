@@ -16,7 +16,7 @@
   },
   "author": "sk",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/sk_0520/",
+  "homepage": "https://github.com/sk-0520/content-type-text-net-public",
   "description": "",
   "devDependencies": {
     "@parcel/transformer-pug": "^2.9.2",
