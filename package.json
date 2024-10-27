@@ -1,6 +1,6 @@
 {
   "name": "content-type-text-net-public",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "debug:assets": "cpx ./source/assets/* ./debug",
     "debug:watch": "parcel watch ./source/*.pug --public-url . --dist-dir debug",
