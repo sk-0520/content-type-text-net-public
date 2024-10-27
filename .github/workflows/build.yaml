@@ -53,4 +53,4 @@ jobs:
           username: ${{ secrets.DEPLOY_ACCOUNT_USER }}
           password: ${{ secrets.DEPLOY_ACCOUNT_PASSWORD }}
           server-dir: ./public_html/
-          local-dir: dist
+          local-dir: dist/
