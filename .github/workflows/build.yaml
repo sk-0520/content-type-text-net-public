@@ -1,0 +1,56 @@
+name: Build
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: <Checkout> Repository
+        uses: actions/checkout@v4
+
+      - name: <Add> Node/NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./.node-version
+          cache: npm
+
+      - name: <Install> NPM
+        run: npm ci
+
+      - name: <Build> Web
+        run: npm run build
+
+      - name: <Artifact> Web
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+  deploy:
+    needs: build
+
+    # if: github.ref == 'refs/heads/main'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: <Download> Web
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: <Deploy> Web
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: content-type-text.org
+          username: ${{ secrets.DEPLOY_ACCOUNT_USER }}
+          password: ${{ secrets.DEPLOY_ACCOUNT_PASSWORD }}
+          server-dir: ./public_html/
+          local-dir: dist
