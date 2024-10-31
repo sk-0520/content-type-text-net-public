@@ -20,10 +20,18 @@ html(lang='ja')
 		block BLOCK_LAYOUT_HEAD_SCRIPT
 		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-83877058-1")
 		script.
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-83877058-1');
+			var _paq = window._paq = window._paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//analytics.content-type-text.org/";
+				_paq.push(['setTrackerUrl', u+'matomo.php']);
+				_paq.push(['setSiteId', '2']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+			})();
+
 	body
 		if(VAR_LAYOUT_TITLE)
 			h1 #{VAR_LAYOUT_TITLE}
