@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: <Checkout> Repository
-        uses: actions/checkout@latest
+        uses: actions/checkout
 
       - name: <Add> Node/NPM
-        uses: actions/setup-node@latest
+        uses: actions/setup-node
         with:
           node-version-file: ./.node-version
           cache: npm
@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: <Artifact> Web
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact
         with:
           name: dist
           path: dist
@@ -42,13 +42,13 @@ jobs:
 
     steps:
       - name: <Download> Web
-        uses: actions/download-artifact@latest
+        uses: actions/download-artifact
         with:
           name: dist
           path: dist
 
       - name: <Deploy> Web
-        uses: SamKirkland/FTP-Deploy-Action@latest
+        uses: SamKirkland/FTP-Deploy-Action
         with:
           protocol: ftps
           server: content-type-text.org
